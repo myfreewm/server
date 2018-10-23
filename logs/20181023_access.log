@@ -4,3 +4,4 @@
 {"name":"trace_logger","hostname":"PC-PC","pid":17208,"level":30,"msg":"\n[start up done] - 20181023155322064 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:53:22.064Z","v":0}
 {"name":"trace_logger","hostname":"PC-PC","pid":2036,"level":30,"msg":"\n[start up done] - 20181023155929408 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:59:29.409Z","v":0}
 {"name":"trace_logger","hostname":"PC-PC","pid":16620,"level":30,"msg":"\n[start up done] - 20181023160257625 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T08:02:57.626Z","v":0}
+{"name":"trace_logger","hostname":"PC-PC","pid":21832,"level":30,"msg":"\n[start up done] - 20181023184857149 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T10:48:57.149Z","v":0}
