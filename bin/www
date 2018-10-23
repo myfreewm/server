@@ -1,0 +1,117 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('group:server');
+var http = require('http');
+
+var appConf = require('../config/appconf');
+var logger = require('../common/logger');
+var time = require('../common/time');
+
+// 设置主机端口 ipv4
+var _ENV = 'sit';
+var _HOST_INFO = {};
+
+let interfaces = require('os').networkInterfaces();
+for (var devName in interfaces) {
+    var iface = interfaces[devName];
+    for (var i = 0; i < iface.length; i++) {
+        if(!iface[i].internal){
+            _HOST_INFO[iface[i].family]=iface[i].address;
+        }
+    }
+}
+
+ _HOST_INFO["HostName"] = require('os').hostname();
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+port = appConf['httpPort'] || port
+
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+function tip(){
+
+    console.log('\n[start up done] - '+ time.getCurrentTime()+ ' - 200 -Server running at http://'+_HOST_INFO['IPv4']+ ':%s [%s] [%s] \n',appConf['httpPort'],_HOST_INFO['HostName'],_ENV);
+    logger.info('\n[start up done] - '+ time.getCurrentTime()+ ' - 200 -Server running at http://'+_HOST_INFO['IPv4']+ ':%s [%s] [%s] \n',appConf['httpPort'],_HOST_INFO['HostName'],_ENV)
+}
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port,tip);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
