@@ -1,6 +1,11 @@
+/**
+ * file utils
+ *
+ * */
 
-var fs = require('fs');
-var logger = require('./logger');
+var fs      = require('fs');
+
+var logger  = require('./logger');
 
 var writeDataToFile = function(file_path,json_data,callback){
 
