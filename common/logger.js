@@ -1,7 +1,14 @@
+/**
+ * log utils
+ *
+ * */
 
-var bunyan = require('bunyan');
-var path = require('path');
-var time = require('./time');
+var bunyan  = require('bunyan');
+
+var path    = require('path');
+
+var time    = require('./time');
+
 var appConf = require('../config/appconf');
 
 
@@ -19,5 +26,6 @@ var log = bunyan.createLogger({
         }
     ]
 })
+
 
 module.exports = log;
