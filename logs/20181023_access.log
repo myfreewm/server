@@ -1,6 +1,0 @@
-{"name":"trace_logger","hostname":"PC-PC","pid":16244,"level":30,"msg":"\n[start up done] - 20181023152920362 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:29:20.362Z","v":0}
-{"name":"trace_logger","hostname":"PC-PC","pid":14880,"level":30,"msg":"\n[start up done] - 20181023153259465 - 200 -Server running at http://192.168.106.1:3000 [PC-PC] [sit] \n","time":"2018-10-23T07:32:59.465Z","v":0}
-{"name":"trace_logger","hostname":"PC-PC","pid":16148,"level":30,"msg":"\n[start up done] - 20181023153615253 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:36:15.253Z","v":0}
-{"name":"trace_logger","hostname":"PC-PC","pid":17208,"level":30,"msg":"\n[start up done] - 20181023155322064 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:53:22.064Z","v":0}
-{"name":"trace_logger","hostname":"PC-PC","pid":2036,"level":30,"msg":"\n[start up done] - 20181023155929408 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T07:59:29.409Z","v":0}
-{"name":"trace_logger","hostname":"PC-PC","pid":16620,"level":30,"msg":"\n[start up done] - 20181023160257625 - 200 -Server running at http://192.168.106.1:3001 [PC-PC] [sit] \n","time":"2018-10-23T08:02:57.626Z","v":0}
