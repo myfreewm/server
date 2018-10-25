@@ -29,6 +29,8 @@ var usersRouter    = require('./routes/users');
 
 var questionRouter = require('./routes/question');
 
+var uploadRouter   = require('./routes/upload');
+
 // 获取express实例
 var app = express();
 
@@ -60,6 +62,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/question',questionRouter);
+
+app.use('/upload',uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
