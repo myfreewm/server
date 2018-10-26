@@ -8,8 +8,9 @@ var mongoose   =   require("mongoose");
 
 var dataConf   =   require('./../config/dataconf');
 
+var dbPath     = dataConf['dbPath'];
 // connect mongo
-mongoose.connect(dataConf['dbPath']);
+mongoose.connect(dbPath);
 
 var db = mongoose.connection;
 
@@ -22,7 +23,7 @@ db.on('error', function(err){
 // listen status:open
 db.on('open', function(){
 
-    console.log('数据库链接成功');
+    console.log('数据库链接成功',dbPath);
 })
 
 // listen status:disconnected

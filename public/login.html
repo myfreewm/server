@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片上传页面</title>
+	<meta charset="utf-8">
+
+    <script src='./javascripts/jquery.min.js'> </script>
+</head>
+
+<body>
+
+<h2>登录页面</h2>
+
+
+    <p>
+        <label> username: </label>
+        <input type='text' id='username'>
+    </p>
+
+    <p>
+        <label>password:</label>
+        <input type="password" id="password">
+    </p>
+    
+    <p>
+        <button id="register" onclick="sendData('register')">注册</button>
+        <button id="login" onclick="sendData('login')">登录</button>
+    </p>
+
+<script>
+        
+    // init
+    $(function(){
+        
+    });
+
+    // sendData
+    
+    function sendData(status){
+
+        var loginInfo = {
+                
+            username  : $('#username').val(),
+            password  : $('#password').val()
+
+        };
+        var urlPath = '';
+
+        if(status == 'register'){
+
+            urlPath = '/login/register';
+        }else{
+
+            urlPath = '/login';
+        }
+        $.ajax({
+                    
+                data   :loginInfo,
+                url    :urlPath,
+                type   :'POST',
+                cache  :false,
+                success:function(data){console.log(data)},
+                error  :function(err){console.log(err)}
+            })
+
+    }
+</script>
+
+</body>
+</html>
