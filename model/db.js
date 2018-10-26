@@ -23,7 +23,7 @@ db.on('error', function(err){
 // listen status:open
 db.on('open', function(){
 
-    console.log('数据库链接成功',dbPath);
+    console.log('数据库链接成功');
 })
 
 // listen status:disconnected
