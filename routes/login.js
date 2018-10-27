@@ -13,10 +13,17 @@ var schema = require('../model/model');
 var db     = require('../model/db_operation');
 
 
+// 路由过滤中间件
 
+router.use(function(req,res,next){
+
+    next();
+})
+
+// 默认
 router.get('/', function(req, res, next){
 
-    res.redirect('login.html');
+    res.location('login.html');
 });
 
 // 登录
@@ -26,9 +33,9 @@ router.post('/', function(req, res, next){
     
     var res = res; 
 
-    db.find(schema.UserModel, {'username':params.username}, function(status, result){
+    db.find(schema.UserModel, {'username':params.username}, function(statuss, result){
 
-        if(status){
+        if(statuss){
 
             res.send('login success');
         }else{
@@ -44,9 +51,12 @@ router.post('/', function(req, res, next){
 router.post('/register', function(req, res, next){
 
     var params = req.body;
+
+    console.log( params ); 
     
     db.find(schema.UserModel, {'username':params.username}, function(status, result){
-        
+       
+        console.log(status, result);
         if(status){
             
             if(result.length > 0){

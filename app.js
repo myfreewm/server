@@ -49,6 +49,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(cookieParser());
 
+// it parses incoming requests with JSON payloads and is based on body-parser
 app.use(express.json());
 
 // ??
