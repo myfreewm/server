@@ -23,15 +23,7 @@ var favicon        = require('serve-favicon');
 var time           = require('./common/time');
 
 // routes list
-var indexRouter    = require('./routes/index');
-
-var usersRouter    = require('./routes/users');
-
-var questionRouter = require('./routes/question');
-
-var uploadRouter   = require('./routes/upload');
-
-var loginRouter    = require('./routes/login');
+var routers    = require('./routes/index');
 
 // 获取express实例
 var app = express();
@@ -60,15 +52,15 @@ app.use(morgan('dev',{stream:accessLogStream}));
 //app.use(morgan('dev'));
 
 // 顶级路由配置
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 
-app.use('/users', usersRouter);
+app.use('/users', routers.usersRouter);
 
-app.use('/question', questionRouter);
+app.use('/question', routers.questionRouter);
 
-app.use('/upload', uploadRouter);
+app.use('/upload', routers.uploadRouter);
 
-app.use('/login', loginRouter);
+app.use('/login', routers.loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

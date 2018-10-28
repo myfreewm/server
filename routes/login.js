@@ -23,7 +23,7 @@ router.use(function(req,res,next){
 // 默认
 router.get('/', function(req, res, next){
 
-    res.location('login.html');
+    res.redirect('login.html');
 });
 
 // 登录

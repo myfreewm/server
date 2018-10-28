@@ -8,7 +8,7 @@ var mongoose   =   require("mongoose");
 
 var dataConf   =   require('./../config/dataconf');
 
-var dbPath     = dataConf['dbPath_test'];
+var dbPath     = dataConf['dbPath_home'];
 // connect mongo
 mongoose.connect(dbPath);
 

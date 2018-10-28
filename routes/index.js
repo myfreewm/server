@@ -1,9 +1,22 @@
-var express = require('express');
-var router = express.Router();
+/**
+ * 管理所有的路由
+ * */
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-module.exports = router;
+var loginRouter    = require('./login');
+
+var questionRouter = require('./question');
+
+var uploadRouter   = require('./upload');
+
+var usersRouter    = require('./users');
+
+
+// 集中导出
+module.exports.loginRouter    = loginRouter;
+
+module.exports.questionRouter = questionRouter;
+
+module.exports.uploadRouter   = uploadRouter;
+
+module.exports.usersRouter    = usersRouter;
